@@ -1,36 +1,46 @@
 package netology;
 
-public class Ratio {
+public class Radio {
+    private int channelsQuantity = 10;
+    private int maxNumber;
+    private int currentChannelsQuantity;
     private int currentNumber;
     private int currentVolume;
 
     public int getCurrentNumber() {
         return currentNumber;
     }
-
     public int getCurrentVolume() {
         return currentVolume;
+    }
+
+    public Radio (int channelsQuantity) {
+        this.maxNumber = channelsQuantity - 1;
+    }
+
+    public Radio () {
+        this.maxNumber = channelsQuantity - 1;
     }
 
     public void setCurrentNumber(int newCurrentNumber) {
         if (newCurrentNumber < 0) {
             return;
         }
-        if (newCurrentNumber > 9) {
+        if (newCurrentNumber > maxNumber) {
             return;
         }
         currentNumber = newCurrentNumber;
     }
 
     public void nextNumber() {
-        if (currentNumber == 9) {
+        if (currentNumber == maxNumber) {
             currentNumber = 0;
         } else currentNumber = currentNumber + 1;
     }
 
     public void prevNumber() {
         if (currentNumber == 0) {
-            currentNumber = 9;
+            currentNumber = maxNumber;
         } else currentNumber = currentNumber - 1;
     }
 
