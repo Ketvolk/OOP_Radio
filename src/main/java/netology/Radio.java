@@ -1,6 +1,6 @@
 package netology;
 
-public class Ratio {
+public class Radio {
     private int currentNumber;
     private int currentVolume;
 
